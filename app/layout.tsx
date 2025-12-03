@@ -2,33 +2,45 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MAVION Digital Indonesia | Web & System Development",
+  metadataBase: new URL("https://mavion-digital.vercel.app"),
+  title: {
+    default: "MAVION Digital Indonesia | Jasa Pembuatan Website & Sistem Informasi",
+    template: "%s | MAVION Digital Indonesia",
+  },
   description:
-    "Layanan profesional pembuatan website dan sistem informasi untuk UMKM, personal brand, bisnis, dan perusahaan.",
+    "Jasa pembuatan website profesional, sistem informasi, aplikasi berbasis web untuk UMKM, bisnis, dan perusahaan. Support Next.js, React, TypeScript.",
   keywords: [
-    "mavion",
-    "mavion digital",
     "jasa pembuatan website",
-    "jasa website profesional",
-    "web developer indonesia",
-    "website UMKM",
-    "sistem informasi",
-    "company profile website",
-    "web system development"
+    "jasa website umkm",
+    "jasa web developer indonesia",
+    "website murah",
+    "sistem informasi perusahaan",
+    "Mavion Digital",
+    "jasa pembuatan aplikasi",
+    "web development"
   ],
   openGraph: {
     title: "MAVION Digital Indonesia",
     description: "Partner teknologi untuk website & sistem bisnis.",
     url: "https://mavion-digital.vercel.app",
-    siteName: "MAVION Digital",
+    siteName: "MAVION Digital Indonesia",
     locale: "id_ID",
     type: "website",
+    images: ["/og-image.jpg"],
   },
-  robots: "index, follow",
-  authors: [{ name: "MAVION Digital Indonesia" }],
-  creator: "MAVION Digital Indonesia",
-  publisher: "MAVION Digital Indonesia",
+  alternates: {
+    canonical: "https://mavion-digital.vercel.app",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
